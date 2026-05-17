@@ -8,7 +8,7 @@ import pandas as pd
 from datetime import datetime
 from utils.auth import require_role
 from queries.patient_queries import get_patient_by_id
-from queries.appointment_queries import get_patient_appointments, add_appointment, list_available_doctors
+from queries.appointment_queries import get_patient_appointments, add_appointment, list_available_doctors, cancel_appointment
 from queries.prescription_queries import get_patient_prescriptions
 from utils.file_handler import save_file, list_patient_files
 import plotly.express as px
@@ -151,8 +151,10 @@ with tabs[1]:
                 with col4:
                     if apt['status'] == 'scheduled':
                         if st.button("Cancel", key=f"cancel_{apt['appointment_id']}"):
-                            # Cancel appointment logic would go here
-                            st.warning("Cancellation feature coming soon")
+                            with st.spinner("Cancelling appointment..."):
+                                cancel_appointment(apt['appointment_id'])
+                                st.success("Appointment cancelled successfully!")
+                                st.rerun()
     else:
         st.info("No appointments found. Schedule your first appointment above!")
 

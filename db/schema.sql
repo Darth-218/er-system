@@ -108,6 +108,7 @@ CREATE TABLE IF NOT EXISTS appointment (
     status ENUM('scheduled','cancelled','completed') DEFAULT 'scheduled',
     payment_amount DECIMAL(10,2),
     payment_status ENUM('unpaid','paid','refunded') DEFAULT 'unpaid',
+    symptoms TEXT,
     FOREIGN KEY (patient_id) REFERENCES patient(id),
     FOREIGN KEY (doctor_id) REFERENCES doctor(id)
 );
