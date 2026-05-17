@@ -28,9 +28,9 @@ INSERT IGNORE INTO doctor (id, user_id, ssn, sex, birthdate, major_scientific_ar
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Patients
 -- -------------------------------------------------------
-INSERT IGNORE INTO patient (id, user_id, patient_number, ssn, address, phone, birthdate, sex, medical_history, blood_pressure, heart_rate, temperature, admission_date, latitude, longitude) VALUES
-(1, 4, 'P-10001', '444-55-6666', '123 Main St, Cityville', '555-0101', '1985-08-20', 'M', 'Asthma', '120/80', 72, 37.0, '2025-05-14 08:30:00', 40.7128, -74.0060),
-(2, 4, 'P-10002', '444-55-7777', '456 Oak Ave, Townsburg', '555-0102', '1992-12-10', 'F', 'Diabetes Type 2', '130/85', 78, 36.8, '2025-05-14 09:00:00', 40.7282, -73.7949);
+INSERT IGNORE INTO patient (id, user_id, patient_number, ssn, address, phone, birthdate, sex, medical_history, blood_pressure, heart_rate, temperature, spo2, admission_date, latitude, longitude) VALUES
+(1, 4, 'P-10001', '444-55-6666', '123 Main St, Cityville', '555-0101', '1985-08-20', 'M', 'Asthma', '120/80', 72, 37.0, 98, '2025-05-14 08:30:00', 40.7128, -74.0060),
+(2, 4, 'P-10002', '444-55-7777', '456 Oak Ave, Townsburg', '555-0102', '1992-12-10', 'F', 'Diabetes Type 2', '130/85', 78, 36.8, 97, '2025-05-14 09:00:00', 40.7282, -73.7949);
 
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Rooms

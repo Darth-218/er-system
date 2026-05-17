@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS patient (
     blood_pressure VARCHAR(20),
     heart_rate INT,
     temperature DECIMAL(4,1),
+    spo2 TINYINT,
     admission_date DATETIME,
     latitude DECIMAL(10,7),
     longitude DECIMAL(10,7),
