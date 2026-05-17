@@ -24,3 +24,6 @@ python-dateutil==2.8.2
 # Additional Utilities
 requests==2.31.0
 click==8.1.7
+
+# Password Hashing
+bcrypt==4.1.2

@@ -31,7 +31,7 @@ with col1:
         <h4>👤 Patient Access</h4>
         <p>View your appointments, prescriptions, and medical records</p>
         <p><strong>Demo Credentials:</strong><br>
-        Email: patient@example.com<br>
+        Email: patient@his.com<br>
         Password: patient123</p>
     </div>
     
@@ -39,7 +39,7 @@ with col1:
         <h4>👨‍⚕️ Doctor Access</h4>
         <p>Manage patient appointments and write prescriptions</p>
         <p><strong>Demo Credentials:</strong><br>
-        Email: doctor@example.com<br>
+        Email: doctor@his.com<br>
         Password: doctor123</p>
     </div>
     """, unsafe_allow_html=True)
@@ -50,7 +50,7 @@ with col2:
         <h4>👩‍⚕️ Nurse Access</h4>
         <p>Handle triage, bed management, and waiting room</p>
         <p><strong>Demo Credentials:</strong><br>
-        Email: nurse@example.com<br>
+        Email: nurse@his.com<br>
         Password: nurse123</p>
     </div>
     
@@ -58,7 +58,7 @@ with col2:
         <h4>📊 Admin Access</h4>
         <p>System administration, reports, and user management</p>
         <p><strong>Demo Credentials:</strong><br>
-        Email: admin@example.com<br>
+        Email: admin@his.com<br>
         Password: admin123</p>
     </div>
     """, unsafe_allow_html=True)

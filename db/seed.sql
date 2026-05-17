@@ -6,10 +6,10 @@
 -- PLACEHOLDER — Member 1: Users
 -- -------------------------------------------------------
 INSERT IGNORE INTO user (id, email, password_hash, role, name) VALUES
-(1, 'admin@his.com', '$2b$12$placeholder_hash_admin', 'admin', 'Dr. Admin'),
-(2, 'doctor@his.com', '$2b$12$placeholder_hash_doctor', 'doctor', 'Dr. House'),
-(3, 'nurse@his.com',  '$2b$12$placeholder_hash_nurse',  'nurse',  'Nurse Joy'),
-(4, 'patient@his.com', '$2b$12$placeholder_hash_patient', 'patient', 'John Doe');
+(1, 'admin@his.com', '$2b$12$Z68Vv4.sqa0bDUgMMbYmMexewtNT/YfhZUcUOQsJdl2A0./PBKhHq', 'admin', 'Dr. Admin'),
+(2, 'doctor@his.com', '$2b$12$MqbWsFFtGoSO/TvseO6qEuPUfe0ADyjEbSvtzUtZFfrKxFEAgzxYW', 'doctor', 'Dr. House'),
+(3, 'nurse@his.com',  '$2b$12$ybdDf0/BHuoWqFxRq8vfae2RiOnQtmt0JRYbzgujezfnm/lD0pCUe',  'nurse',  'Nurse Joy'),
+(4, 'patient@his.com', '$2b$12$qr7kj39YzXd0gjoK1T8NDeb8CeVCuh1KnYlMrLziz4E/lSCFLoqhG', 'patient', 'John Doe');
 
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Departments
