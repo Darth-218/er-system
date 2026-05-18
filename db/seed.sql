@@ -9,8 +9,8 @@ INSERT IGNORE INTO user (id, email, password_hash, role, name) VALUES
 (1, 'admin@his.com', '$2b$12$Z68Vv4.sqa0bDUgMMbYmMexewtNT/YfhZUcUOQsJdl2A0./PBKhHq', 'admin', 'Dr. Admin'),
 (2, 'doctor@his.com', '$2b$12$MqbWsFFtGoSO/TvseO6qEuPUfe0ADyjEbSvtzUtZFfrKxFEAgzxYW', 'doctor', 'Dr. House'),
 (3, 'nurse@his.com',  '$2b$12$ybdDf0/BHuoWqFxRq8vfae2RiOnQtmt0JRYbzgujezfnm/lD0pCUe',  'nurse',  'Nurse Joy'),
-(4, 'patient@his.com', '$2b$12$qr7kj39YzXd0gjoK1T8NDeb8CeVCuh1KnYlMrLziz4E/lSCFLoqhG', 'patient', 'John Doe');
-
+(4, 'patient@his.com', '$2b$12$qr7kj39YzXd0gjoK1T8NDeb8CeVCuh1KnYlMrLziz4E/lSCFLoqhG', 'patient', 'John Doe'),
+(5, 'doctor2@his.com', 'test', 'doctor', 'Dr. Wilson');
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Departments
 -- -------------------------------------------------------
@@ -23,7 +23,8 @@ INSERT IGNORE INTO department (id, name, code, chairman_id, supervision_start_da
 -- PLACEHOLDER — Member 1: Doctors
 -- -------------------------------------------------------
 INSERT IGNORE INTO doctor (id, user_id, ssn, sex, birthdate, major_scientific_area, degree, join_date, department_id) VALUES
-(1, 2, '111-22-3333', 'M', '1970-05-15', 'Emergency Medicine', 'MD', '2020-03-01', 1);
+(1, 2, '111-22-3333', 'M', '1970-05-15', 'Emergency Medicine', 'MD', '2020-03-01', 1),
+(2, 5, '222-33-4444', 'M', '1980-04-10', 'Emergency Medicine', 'MD', '2021-01-01', 1);
 
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Patients
@@ -82,7 +83,12 @@ INSERT IGNORE INTO hospital_location (id, name, address, latitude, longitude, de
 -- PLACEHOLDER — Member 2: Appointments
 -- -------------------------------------------------------
 INSERT IGNORE INTO appointment (id, patient_id, doctor_id, appointment_datetime, status, payment_amount, payment_status) VALUES
-(1, 1, 1, '2025-05-15 10:00:00', 'scheduled', 150.00, 'unpaid');
+(1, 1, 1, '2025-05-15 10:00:00', 'scheduled', 150.00, 'unpaid'),
+(2, 1, 1, '2025-05-16 11:00:00', 'completed', 200.00, 'paid'),
+(3, 1, 1, '2025-05-17 12:30:00', 'scheduled', 180.00, 'paid'),
+(4, 1, 1, '2025-05-18 09:00:00', 'completed', 250.00, 'paid'),
+(5, 1, 2, '2025-05-19 14:00:00', 'scheduled', 220.00, 'paid'),
+(6, 2, 2, '2025-05-20 15:30:00', 'completed', 300.00, 'paid');
 
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 2: Prescriptions
