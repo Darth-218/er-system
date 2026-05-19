@@ -95,3 +95,9 @@ INSERT IGNORE INTO appointment (id, patient_id, doctor_id, appointment_datetime,
 -- -------------------------------------------------------
 INSERT IGNORE INTO prescription (id, patient_id, doctor_id, medication, dose, frequency, start_date, end_date, directions) VALUES
 (1, 1, 1, 'Aspirin', '81mg', 'Once daily', '2025-05-14', '2025-06-14', 'Take with food');
+
+INSERT IGNORE INTO file_metadata
+(id, patient_id, original_name, stored_path, uploaded_at, file_type, file_size)
+VALUES
+(1, 1, 'xray_scan.png', 'uploads/xray_scan.png', '2025-05-19 10:00:00', 'png', 2048000),
+(2, 1, 'blood_test.pdf', 'uploads/blood_test.pdf', '2025-05-20 11:00:00', 'pdf', 1024000);

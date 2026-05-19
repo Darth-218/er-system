@@ -156,3 +156,32 @@ def get_dashboard_stats():
 
     finally:
         conn.close()
+
+
+def get_file_metadata_report():
+    conn = get_connection()
+
+    try:
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("""
+            SELECT
+                f.id,
+                u.name AS patient_name,
+                f.original_name,
+                f.file_type,
+                f.file_size,
+                f.uploaded_at
+            FROM file_metadata f
+            JOIN patient p ON f.patient_id = p.id
+            JOIN user u ON p.user_id = u.id
+            ORDER BY f.uploaded_at DESC
+        """)
+
+        return cursor.fetchall()
+
+    except Exception as e:
+        raise DatabaseError(f"Failed to fetch file metadata report: {e}")
+
+    finally:
+        conn.close()

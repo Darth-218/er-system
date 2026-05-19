@@ -14,7 +14,8 @@ from queries.report_queries import (
     get_bed_utilization_report,
     get_esi_statistics,
     get_patient_admission_summary,
-    get_dashboard_stats
+    get_dashboard_stats,
+    get_file_metadata_report
 )
 
 st.set_page_config(page_title="Admin Dashboard", layout="wide")
@@ -149,3 +150,32 @@ if st.button("Show Patient Admissions"):
 
     except Exception as e:
         st.error(f"Error loading patient summary: {e}")
+
+
+
+st.subheader("File Metadata Report")
+
+if st.button("Show Uploaded Files"):
+
+    try:
+        file_report = get_file_metadata_report()
+
+        if file_report:
+            file_df = pd.DataFrame(file_report)
+
+            st.dataframe(file_df, use_container_width=True)
+
+            csv = file_df.to_csv(index=False)
+
+            st.download_button(
+                label="Download File Report",
+                data=csv,
+                file_name="file_metadata_report.csv",
+                mime="text/csv"
+            )
+
+        else:
+            st.warning("No uploaded files found.")
+
+    except Exception as e:
+        st.error(f"Error loading file metadata report: {e}")
