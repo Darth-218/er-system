@@ -10,7 +10,11 @@ INSERT IGNORE INTO user (id, email, password_hash, role, name) VALUES
 (2, 'doctor@his.com', '$2b$12$MqbWsFFtGoSO/TvseO6qEuPUfe0ADyjEbSvtzUtZFfrKxFEAgzxYW', 'doctor', 'Dr. House'),
 (3, 'nurse@his.com',  '$2b$12$ybdDf0/BHuoWqFxRq8vfae2RiOnQtmt0JRYbzgujezfnm/lD0pCUe',  'nurse',  'Nurse Joy'),
 (4, 'patient@his.com', '$2b$12$qr7kj39YzXd0gjoK1T8NDeb8CeVCuh1KnYlMrLziz4E/lSCFLoqhG', 'patient', 'John Doe'),
-(5, 'doctor2@his.com', 'test', 'doctor', 'Dr. Wilson');
+(5, 'doctor2@his.com', 'test', 'doctor', 'Dr. Wilson'),
+(6, 'patient2@his.com', 'test', 'patient', 'Sara Ali'),
+(7, 'patient3@his.com', 'test', 'patient', 'Omar Hassan'),
+(8, 'patient4@his.com', 'test', 'patient', 'Mariam Adel'),
+(9, 'patient5@his.com', 'test', 'patient', 'Khaled Samir');
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Departments
 -- -------------------------------------------------------
@@ -31,7 +35,10 @@ INSERT IGNORE INTO doctor (id, user_id, ssn, sex, birthdate, major_scientific_ar
 -- -------------------------------------------------------
 INSERT IGNORE INTO patient (id, user_id, patient_number, ssn, address, phone, birthdate, sex, medical_history, blood_pressure, heart_rate, temperature, spo2, admission_date, latitude, longitude) VALUES
 (1, 4, 'P-10001', '444-55-6666', '123 Main St, Cityville', '555-0101', '1985-08-20', 'M', 'Asthma', '120/80', 72, 37.0, 98, '2025-05-14 08:30:00', 40.7128, -74.0060),
-(2, 4, 'P-10002', '444-55-7777', '456 Oak Ave, Townsburg', '555-0102', '1992-12-10', 'F', 'Diabetes Type 2', '130/85', 78, 36.8, 97, '2025-05-14 09:00:00', 40.7282, -73.7949);
+(2, 6, 'P-10002', '444-55-7777', '456 Oak Ave, Townsburg', '555-0102', '1992-12-10', 'F', 'Diabetes Type 2', '130/85', 78, 36.8, 97, '2025-05-14 09:00:00', 40.7282, -73.7949),
+(3, 7, 'P-10003', '444-55-8888', '789 Pine Rd', '555-0103', '1978-03-15', 'M', 'Hypertension', '150/95', 110, 38.5, 94, '2025-05-14 09:15:00', 40.7306, -73.9352),
+(4, 8, 'P-10004', '444-55-9999', '321 Cedar Ln', '555-0104', '2001-06-25', 'F', 'None', '118/76', 70, 36.7, 99, '2025-05-14 09:45:00', 40.6500, -73.9496),
+(5, 9, 'P-10005', '444-55-1111', '654 Elm St', '555-0105', '1965-11-02', 'M', 'Heart Disease', '165/100', 120, 39.41, 91, '2025-05-14 10:00:00', 40.8448, -73.8648);
 
 -- -------------------------------------------------------
 -- PLACEHOLDER — Member 1: Rooms
@@ -61,7 +68,10 @@ INSERT IGNORE INTO er_bed (bed_id, department_id, bed_number, status, patient_id
 -- Triage Records
 INSERT IGNORE INTO triage_record (id, patient_id, nurse_id, esi_level, arrival_time, chief_complaint, blood_pressure, heart_rate, temperature) VALUES
 (1, 1, 3, 2, '2025-05-14 08:30:00', 'Sharp chest pain radiating to left arm', '145/90', 102, 37.2),
-(2, 2, 3, 3, '2025-05-14 09:00:00', 'Dizziness and blurred vision', '130/85', 78, 36.8);
+(2, 2, 3, 3, '2025-05-14 09:00:00', 'Dizziness and blurred vision', '130/85', 78, 36.8),
+(3, 3, 3, 1, '2025-05-14 09:15:00', 'Severe breathing difficulty and high fever', '150/95', 110, 38.5),
+(4, 4, 3, 5, '2025-05-14 09:45:00', 'Minor ankle pain after exercise', '118/76', 70, 36.7),
+(5, 5, 3, 2, '2025-05-14 10:00:00', 'Possible heart attack symptoms', '165/100', 120, 39.1);
 
 -- Waiting Room
 INSERT IGNORE INTO waiting_room (id, patient_id, triage_id, queue_position, estimated_wait_minutes, entered_at, status) VALUES
