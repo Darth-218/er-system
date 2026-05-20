@@ -135,10 +135,18 @@ with tab_patients:
             )
             
             if st.button("Cancel Selected Appointment"):
-                appointment_id = appointments[st.session_state.appointment_select.split(' - ')[0].split(' ')[0]]['id']
+                sel = st.session_state.appointment_select
+                selected_idx = [a['patient_name'] for a in appointments].index(sel.split(' - ')[0].split(' - ')[-1])
+                appt = appointments[selected_idx]
+                appointment_id = appt['id']
                 try:
-                    cancel_appointment(appointment_id)
-                    st.success("Appointment cancelled successfully!")
+                    result = cancel_appointment(appointment_id)
+                    if result.get("refunded"):
+                        st.success(f"Appointment cancelled and refunded ${result['amount']:.2f}!")
+                    elif result.get("cancelled"):
+                        st.warning("Appointment cancelled (outside refund window, no refund issued).")
+                    else:
+                        st.error("Failed to cancel appointment.")
                     st.rerun()
                 except DatabaseError as e:
                     st.error(f"Failed to cancel appointment: {e}")

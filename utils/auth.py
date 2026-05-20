@@ -39,7 +39,7 @@ def require_role(required_role):
         st.switch_page("pages/02_Login.py")
         st.stop()
     
-    # Role hierarchy
+    # Role la-hierarchy
     role_hierarchy = {
         'visitor': 0,
         'patient': 1,
